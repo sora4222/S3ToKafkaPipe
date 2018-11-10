@@ -6,6 +6,7 @@ plugins {
 
 group 'com.jesse'
 version '1.0'
+mainClassName = "App"
 
 sourceCompatibility = 1.8
 
@@ -17,4 +18,10 @@ dependencies {
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
     compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
     compile group: 'org.apache.camel', name: 'camel-kafka', version: '2.22.1'
+}
+
+task wrapper(type: Wrapper) {
+    doLast {
+        gradleVersion = '4.10.2'
+    }
 }
