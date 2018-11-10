@@ -32,6 +32,8 @@ public class App {
                     kafkaToS3Properties.getProperty("kafka_topic"));
 
             kafkaDaemon.start();
+            Thread.sleep(100000);
+
         }
         catch (Exception exc){
             System.out.print("Camel has thrown an exception\n");
