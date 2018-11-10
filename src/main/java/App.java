@@ -36,7 +36,7 @@ public class App {
             System.out.print("Camel has thrown an exception\n");
             System.out.print(exc.getMessage());
         }
-
+	System.out.print("Everything went ok!");
 
     }
 }

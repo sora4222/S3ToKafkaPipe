@@ -12,7 +12,7 @@ public class S3ToKafkaDaemon {
             @Override
             public void configure() throws Exception {
                 from("aws-" + s3url + "?useIAMCredentials=True")
-                        .to("kafka:"+ kafka_host + ":9092?topic=" + kafka_topic);
+                        .to("kafka:"+ kafka_topic + "?brokers=" + kafka_host + ":9092");
             }
         });
     }
