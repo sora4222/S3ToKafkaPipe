@@ -11,7 +11,7 @@ public class S3ToKafkaDaemon {
         camelContext.addRoutes(new RouteBuilder() {
             @Override
             public void configure() throws Exception {
-                from("aws-" + s3url + "?useIAMCredentials=True")
+                from("aws-" + s3url + "?useIAMCredentials=True&deleteAfterRead=False")
                         .split(bodyAs(String.class).tokenize("\n"))
                         .to("kafka:"+ kafka_topic + "?brokers=" + kafka_host + ":9092");
             }
